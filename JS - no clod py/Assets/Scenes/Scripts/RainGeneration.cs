@@ -17,7 +17,7 @@ public class RainGeneration : MonoBehaviour
 
         //if timer = 60, instantiate a raindrop at a random x value on screen
         if(timer == 60){
-            x = Random.Range(6, -6);
+            x = Random.Range(10, -10);
             offset = new Vector3 (x, 0, 0);
 
             Instantiate(rain, transform.position + offset, transform.rotation); 
