@@ -31,7 +31,7 @@ public class ComboAttacks : MonoBehaviour
             {
                 anim.SetBool("Attack1", true);
             }
-            NumberOfButtonsPressed = Mathf.Clamp(NumberOfButtonsPressed, 0, 3);
+            NumberOfButtonsPressed = Mathf.Clamp(NumberOfButtonsPressed, 0, 6);
         }
     }
 
@@ -60,11 +60,43 @@ public class ComboAttacks : MonoBehaviour
         }
     }
 
-    public void return3()
+    public void return4()
+    {
+        if (NumberOfButtonsPressed >= 4)
+        {
+            anim.SetBool("Attack4", true);
+        }
+        else
+        {
+            anim.SetBool("Attack3", false);
+            anim.SetBool("Attack2", false);
+            anim.SetBool("Attack1", false);
+        }
+    }
+
+    public void return5()
+    {
+        if (NumberOfButtonsPressed >= 5)
+        {
+            anim.SetBool("Attack5", true);
+        }
+        else
+        {
+            anim.SetBool("Attack5", false);
+            anim.SetBool("Attack4", false);
+            anim.SetBool("Attack3", false);
+            anim.SetBool("Attack2", false);
+            anim.SetBool("Attack1", false);
+        }
+    }
+    public void return6()
     {
         anim.SetBool("Attack1", false);
         anim.SetBool("Attack2", false);
         anim.SetBool("Attack3", false);
+        anim.SetBool("Attack4", false);
+        anim.SetBool("Attack5", false);
+        anim.SetBool("Attack6", false);
         NumberOfButtonsPressed = 0;
     }
 }
