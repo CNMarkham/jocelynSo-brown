@@ -30,7 +30,8 @@ public class HazardFiring : MonoBehaviour
         // Null check for GameOver
         if (playerController.gameOver)
         {
-            return;
+            target = player.transform.position;
+            HazardMoveDirection = target = transform.position;
         }
 
         // Target is set to the the Player's position, 
@@ -47,7 +48,10 @@ public class HazardFiring : MonoBehaviour
             /*****************************\
             |**** Add your code below ****|
             \*****************************/
+            GameObject hazardClone = Instantiate(hazard, transform.position, transform.rotation);
 
+            Rigidbody hazardrigidBody = hazardClone.GetComponent<Rigidbody>();
+            hazardrigidBody.velocity = HazardMoveDirection.normalized;
 
             /*****************************\
             |**** Add your code above ****|
