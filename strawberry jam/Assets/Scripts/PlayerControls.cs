@@ -92,6 +92,9 @@ public class PlayerControls : MonoBehaviour
                 Vector3 leftOffSet = new Vector3(-0.2f, 0, 0);
                 Instantiate(projectile, transform.position + rightOffSet, transform.rotation);
                 Instantiate(projectile, transform.position + leftOffSet, transform.rotation);
+                Instantiate(projectile, transform.position + new Vector3(3, 0, 0), transform.rotation) ;
+                Instantiate(projectile, transform.position + new Vector3(-3, 0, 0), transform.rotation) ;
+               
             }
 
             // If the playerHealth is reduced to 0, 

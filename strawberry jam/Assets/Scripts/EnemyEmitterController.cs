@@ -13,12 +13,14 @@ public class EnemyEmitterController : MonoBehaviour
     private PlayerControls playerController;
     public float spawnRate;
     private float nextSpawn = 5.0f;
+    public GameObject magic; 
 
     void Start()
     {
         // player is set to the GameObject in the scene, "Player"
         GameObject player = GameObject.Find("Player");
         playerController = player.GetComponent<PlayerControls>();
+        
         
     }
     void Update()
@@ -43,7 +45,12 @@ public class EnemyEmitterController : MonoBehaviour
                 Vector3 enemyPosition = new Vector3(randomX, 6, 0);
                 transform.position = enemyPosition;
 
-                Instantiate(Enemy, transform.position, transform.rotation); 
+                Instantiate(Enemy, transform.position, transform.rotation);
+
+                if (playerController.currentLevel == 2) 
+                {
+                    Instantiate(magic, transform.position, transform.rotation);
+                }
             }
 
             /*****************************\
