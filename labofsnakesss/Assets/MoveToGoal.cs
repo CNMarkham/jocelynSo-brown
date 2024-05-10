@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class MoveToGoal : MonoBehaviour
 {
     public Transform goal;
+    public Transform magicspell;
     private Animator animator;
     private NavMeshAgent agent;
 
@@ -25,6 +26,16 @@ public class MoveToGoal : MonoBehaviour
         else
         {
             animator.SetBool("IsRunning", false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        //i give upppppppppppppppppppppppppppp 
+        if (collision.gameObject.CompareTag("magic"))
+        {
+            Destroy(collision.gameObject);
+            agent.destination = magicspell.position;
         }
     }
 }
