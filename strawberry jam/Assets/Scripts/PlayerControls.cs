@@ -85,6 +85,7 @@ public class PlayerControls : MonoBehaviour
             |**** Add your code below ****|
             \*****************************/
 
+            // cloning = instantiate
             Instantiate(projectile, transform.position, transform.rotation);
             if (currentLevel >= 3)
             {
