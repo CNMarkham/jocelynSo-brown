@@ -30,4 +30,14 @@ public class LifeHUD : MonoBehaviour
             background.GetComponent<GameManager>();
         }
     }
+
+    public void HealPlayer()
+    {
+        lives += 1;
+        hearts[lives].SetActive(true);
+        if (lives == 0)
+        {
+            background.GetComponent<GameManager>();
+        }
+    }
 }
