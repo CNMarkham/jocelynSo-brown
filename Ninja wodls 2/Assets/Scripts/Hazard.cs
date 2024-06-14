@@ -17,4 +17,6 @@ public class Hazard : MonoBehaviour
         // ask the healthbar to hurt the player
         HealthBar.GetComponent<LifeHUD>().HurtPlayer();
     }
+
+
 }

@@ -22,6 +22,8 @@ public class LifeHUD : MonoBehaviour
             HUDRefresh();
         }
 
+        Invoke("HurtPlayer", 2f);
+
     }
 
     // if a player gets hurt, remove a life
@@ -33,6 +35,8 @@ public class LifeHUD : MonoBehaviour
         saveData();
         HUDRefresh();
     }
+
+   
 
     public void HUDRefresh()
     {
