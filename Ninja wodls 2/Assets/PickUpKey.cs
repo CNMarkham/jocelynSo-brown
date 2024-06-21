@@ -8,7 +8,17 @@ public class PickUpKey : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
-        teleporterDust.Play();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            gameObject.SetActive(false);
+               teleporterDust.Play();
+        }
+       
     }
 }
+
+
+
+
+
+//CHEESE

@@ -22,8 +22,6 @@ public class LifeHUD : MonoBehaviour
             HUDRefresh();
         }
 
-        Invoke("HurtPlayer", 2f);
-
     }
 
     // if a player gets hurt, remove a life
